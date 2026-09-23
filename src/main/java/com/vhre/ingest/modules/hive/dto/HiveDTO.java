@@ -1,5 +1,6 @@
 package com.vhre.ingest.modules.hive.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.vhre.base.core.base.dto.BaseDTO;
 import com.vhre.ingest.modules.hive.enums.HiveStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -11,6 +12,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Schema(description = "Data Transfer Object representing a Hive")
+@JsonPropertyOrder({
+        "id",
+        "locationCode",
+        "generalStatus",
+        "createdAt",
+        "updatedAt",
+        "deleted"
+})
 public class HiveDTO extends BaseDTO {
     @Schema(description = "Code for the location where the Hive is situated", example = "LOC123")
     @NotNull(message = "The location code is mandatory")

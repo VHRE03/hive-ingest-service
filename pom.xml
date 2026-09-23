@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.github.VHRE03</groupId>
             <artifactId>base-project-spring-boot</artifactId>
-            <version>0bdcb77999</version>
+            <version>5757c28383</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
