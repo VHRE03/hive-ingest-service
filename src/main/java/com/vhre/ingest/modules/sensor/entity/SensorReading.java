@@ -22,9 +22,8 @@ public class SensorReading extends BaseEntity {
     @Column(nullable = false, precision = 5, scale = 2)
     private BigDecimal noiseLevelDb;
 
-    @Column(nullable = false)
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hive_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "hive_id", nullable = false, foreignKey = @ForeignKey(name = "fk_sensor_reading_hive"))
     private Hive hive;
 }
