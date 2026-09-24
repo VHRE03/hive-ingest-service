@@ -35,21 +35,24 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/VHRE03/base-project-spring-boot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
+            <groupId>com.vhre</groupId>
+            <artifactId>base-project-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.VHRE03</groupId>
-            <artifactId>base-project-spring-boot</artifactId>
-            <version>5757c28383</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
