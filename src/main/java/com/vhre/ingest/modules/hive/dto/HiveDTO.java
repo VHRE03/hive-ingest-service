@@ -26,7 +26,7 @@ public class HiveDTO extends BaseDTO {
     @Pattern(regexp = "^[A-Za-z0-9]{1,50}$", message = "The location code must be a maximum of 50 characters, alphanumeric only")
     private String locationCode;
 
-    @Schema(description = "General status of the Hive (active, inactive, under maintenance)", example = "ACTIVE")
+    @Schema(description = "General status of the Hive (ACTIVE, INACTIVE. MAINTENANCE, INACTIVE)", example = "ACTIVE")
     @NotNull(message = "The general status is mandatory")
     private HiveStatus generalStatus;
 }

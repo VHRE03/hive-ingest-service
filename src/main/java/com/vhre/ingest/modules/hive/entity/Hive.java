@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Hive extends BaseEntity {
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 50)
     private String locationCode;
 
     @Enumerated(EnumType.STRING)
