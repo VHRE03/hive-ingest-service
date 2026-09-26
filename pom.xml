@@ -29,7 +29,7 @@
     <properties>
         <java.version>21</java.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
-        <lombok.version>1.18.30</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
     </properties>
 
@@ -48,6 +48,15 @@
             <groupId>com.vhre</groupId>
             <artifactId>base-project-spring-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <!-- Excluido para evitar el choque de clases con swagger-annotations-jakarta 2.2.52
+                     que aporta springdoc 3.x (NoSuchMethodError: Schema.$dynamicRef en /v3/api-docs).
+                     Misma correccion aplicada en hive-alert-service. -->
+                <exclusion>
+                    <groupId>io.swagger.core.v3</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -66,10 +75,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
+        <!-- springdoc 3.x: version alineada con Spring Boot 4.x (la linea 2.x
+             esta pensada para Boot 3). Misma version que hive-alert-service. -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.5.0</version>
+            <version>3.1.0</version>
         </dependency>
 
         <dependency>
